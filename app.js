@@ -1,12 +1,12 @@
 const PARTNERS = [
   {
-    id: `rafael-mendes`,
-    name: `Rafael Mendes`,
-    initials: `RM`,
-    handle: `@rafael-mendes`,
+    id: `israel-diacov`,
+    name: `Israel Demetrios Diacov`,
+    initials: `IDD`,
+    handle: `@israel-diacov`,
     role: `Engenheiro de Sistemas & Áudio`,
     location: `Curitiba, PR`,
-    experience: `9 anos em desktop nativo`,
+    experience: `12 anos em desktop nativo`,
     bio: `Especialista em processamento de áudio em baixa latência e ferramentas nativas em C++20 e Rust para criadores, streamers e engenheiros de som no Windows.`,
     stacks: [
       `C++20`,
@@ -18,18 +18,18 @@ const PARTNERS = [
       `WebAssembly`,
     ],
     links: [
-      { network: `GitHub`, address: `github.com/rafaelmendes-dev` },
-      { network: `LinkedIn`, address: `linkedin.com/in/rafael-mendes-sys` },
-      { network: `Portfólio`, address: `rafaelmendes.dev.br` },
+      { network: `GitHub`, address: `github.com/israel-diacov` },
+      { network: `LinkedIn`, address: `linkedin.com/in/israel-diacov` },
+      { network: `Portfólio`, address: `israel-diacov.dev.br` },
     ],
   },
   {
-    id: `camila-duarte`,
-    name: `Camila Duarte`,
-    initials: `CD`,
-    handle: `@camila-duarte`,
+    id: `jhonatan-marcondes`,
+    name: `Jhonatan Marcondes`,
+    initials: `JM`,
+    handle: `@jhonatan-marcondes`,
     role: `Arquiteta de Segurança & Redes`,
-    location: `Belo Horizonte, MG`,
+    location: `Curitiba, PR`,
     experience: `8 anos em Blue Team & Infra`,
     bio: `Pesquisadora em segurança defensiva e automação de redes corporativas. Desenvolve utilitários portáteis e auditáveis para equipes de Blue Team e SysAdmins.`,
     stacks: [
@@ -41,9 +41,9 @@ const PARTNERS = [
       `SQLite`,
     ],
     links: [
-      { network: `GitHub`, address: `github.com/camiladuarte-sec` },
-      { network: `LinkedIn`, address: `linkedin.com/in/camila-duarte-sec` },
-      { network: `Blog Técnico`, address: `camiladuarte.io` },
+      { network: `GitHub`, address: `github.com/jhonatanmarcondes-sec` },
+      { network: `LinkedIn`, address: `linkedin.com/in/jhonatan-marcondes-sec` },
+      { network: `Blog Técnico`, address: `jhonatanmarcondes.io` },
     ],
   },
   {
@@ -144,10 +144,10 @@ const PROJECTS = [
 
 
 const PARTNER_PROJECTS = [
-  { id:"demo-gainstage", partnerId:"rafael-mendes", name:"GainStage Meter", category:"Mídia & Áudio", icon:"audio-waveform", status:"Demonstração", shortDesc:"Medidor de áudio para monitoramento de nível e pico em transmissões e produção sonora.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Rafael Mendes. Os dados servem apenas para validar a navegação e o catálogo de parceiros.", stack:["C++20","JUCE","WASAPI"], features:["Interface de medição de áudio.","Exibição de níveis e picos.","Exemplo de ficha de software."], notes:"Conteúdo fictício de demonstração. Não há executável disponível." },
-  { id:"demo-netshield", partnerId:"camila-duarte", name:"NetShield Tray", category:"Segurança", icon:"shield-check", status:"Demonstração", shortDesc:"Conceito de painel para visualizar conexões e regras de firewall.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Camila Duarte. Os dados servem apenas para validar a navegação e o catálogo de parceiros.", stack:["Go","Python","SQLite"], features:["Conceito de auditoria de conexões.","Painel ilustrativo de regras.","Exemplo de ficha de software."], notes:"Conteúdo fictício de demonstração. Não há executável disponível." },
+  { id:"demo-gainstage", partnerId:"israel-diacov", name:"GainStage Meter", category:"Mídia & Áudio", icon:"audio-waveform", status:"Demonstração", shortDesc:"Medidor de áudio para monitoramento de nível e pico em transmissões e produção sonora.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Israel Diacov. Os dados servem apenas para validar a navegação e o catálogo de parceiros.", stack:["C++20","JUCE","WASAPI"], features:["Interface de medição de áudio.","Exibição de níveis e picos.","Exemplo de ficha de software."], notes:"Conteúdo fictício de demonstração. Não há executável disponível." },
+  { id:"demo-netshield", partnerId:"jhonatan-marcondes", name:"NetShield Tray", category:"Segurança", icon:"shield-check", status:"Demonstração", shortDesc:"Conceito de painel para visualizar conexões e regras de firewall.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Camila Duarte. Os dados servem apenas para validar a navegação e o catálogo de parceiros.", stack:["Go","Python","SQLite"], features:["Conceito de auditoria de conexões.","Painel ilustrativo de regras.","Exemplo de ficha de software."], notes:"Conteúdo fictício de demonstração. Não há executável disponível." },
   { id:"demo-devflow", partnerId:"thiago-nakagawa", name:"DevFlow Local", category:"Produtividade", icon:"workflow", status:"Demonstração", shortDesc:"Conceito de ferramenta para organizar tarefas e fluxos locais de desenvolvimento.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Thiago Nakagawa. Os dados servem apenas para validar a navegação e o catálogo de parceiros.", stack:["TypeScript","Node.js","SQLite"], features:["Organização de fluxos locais.","Visão resumida de tarefas.","Exemplo de ficha de software."], notes:"Conteúdo fictício de demonstração. Não há executável disponível." },
-  { id:"demo-uifocus", partnerId:"beatriz-alencar", name:"UIFocus Desk", category:"Produtividade", icon:"panels-top-left", status:"Demonstração", shortDesc:"Conceito de interface desktop para organização visual e foco no trabalho.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Beatriz Alencar. Os dados servem apenas para validar a navegação e o catálogo de parceiros.", stack:["C#",".NET 8","WinUI 3"], features:["Conceito de organização de janelas.","Interface desktop ilustrativa.","Exemplo de ficha de software."], notes:"Conteúdo fictício de demonstração. Não há executável disponível." }
+  { id:"demo-uifocus", partnerId:"beatriz-alencar", name:"UIFocus Desk", category:"Produtividade", icon:"panels-top-left", status:"Demonstração", shortDesc:"Conceito de interface desktop para organização visual e foco no trabalho.", fullDesc:"Aplicativo fictício de demonstração associado ao perfil de Beatriz Alencar. Os dados servem apenas para validar a navegação e o catálogode parceiros.", stack:["C#",".NET 8","WinUI 3"], features:["Conceito_de_organização_de_janelas.","Interface_desktop_ilustrativa.","Exemplo_de_ficha_de_software."], notes:"Conteúdo fictício_de_demonstração._Não_há_executável_disponível." }
 ];
 
 const state = {
