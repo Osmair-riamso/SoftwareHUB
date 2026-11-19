@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="dashboard">
+  <meta name="design-style" content="aurora">
+  <meta name="description" content="Software Hub de Osmair Pereira: trajetória profissional, projetos e tecnologias.">
+  <title>Software Hub | Osmair Pereira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <div class="page-grid">
+    <!-- Apresentação profissional -->
+    <header class="hero">
+      <div class="hero-main">
+        <p class="hero-author">OSMAIR PEREIRA · DESENVOLVEDOR DE SOFTWARE JÚNIOR</p>
+        <h1 class="hero-title">Tecnologia, experiência e soluções em desenvolvimento.</h1>
+        <p class="hero-subtitle">
+          Profissional de tecnologia com experiência em TI desde 2010, atuando em suporte técnico,
+          infraestrutura e desenvolvimento de soluções próprias. Formado em Análise e Desenvolvimento
+          de Sistemas, direciono minha trajetória para a criação de aplicações e produtos de software.
+        </p>
+      </div>
+      <div class="hero-aside" aria-label="Principais conhecimentos">
+        <div class="hero-aside-top">
+          <span class="data-label">Principais tecnologias</span>
+          <span class="verified-pill">Perfil profissional</span>
+        </div>
+        <div class="hero-aside-meta">
+          <span>Formação: Análise e Desenvolvimento de Sistemas</span>
+        </div>
+        <div class="hero-stack-row">
+          <span class="mini-chip">JavaScript</span>
+          <span class="mini-chip">Python · básico</span>
+          <span class="mini-chip">React</span>
+          <span class="mini-chip">Node.js</span>
+          <span class="mini-chip">SQL</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Resumo profissional -->
+    <section class="kpi-grid" aria-label="Resumo profissional">
+      <div class="kpi-card">
+        <span class="data-label">Experiência em TI</span>
+        <span class="kpi-value">Desde 2010</span>
+        <span class="kpi-delta">Suporte, infraestrutura e tecnologia</span>
+      </div>
+      <div class="kpi-card">
+        <span class="data-label">Formação</span>
+        <span class="kpi-value">ADS</span>
+        <span class="kpi-delta">Análise e Desenvolvimento de Sistemas</span>
+      </div>
+      <div class="kpi-card">
+        <span class="data-label">Projetos apresentados</span>
+        <span class="kpi-value" id="kpi-total-apps">3</span>
+        <span class="kpi-delta">Projetos pessoais e de desenvolvimento</span>
+      </div>
+      <div class="kpi-card">
+        <span class="data-label">Parceiros</span>
+        <span class="kpi-value">Em breve</span>
+        <span class="kpi-delta">Espaço reservado para novos desenvolvedores</span>
+      </div>
+    </section>
+
+    <!-- Tabs, Filters, and Partner Bar -->
+    <section class="controls-section" aria-label="Navegação e filtros do catálogo">
+      <div class="tabs-bar">
+        <div class="tablist" role="tablist" aria-label="Seções do portfólio">
+          <button type="button" class="tab-btn" role="tab" id="tab-meus-projetos" aria-selected="true"
+            aria-controls="catalog-panel" onclick="switchTab('meus')">
+            <i data-lucide="layers" aria-hidden="true" width="18" height="18"></i>
+            <span>Meus Projetos</span>
+            <span class="tab-count" id="count-meus">3</span>
+          </button>
+<button type="button" class="tab-btn" role="tab" id="tab-parceiros" aria-selected="false"
+            aria-controls="catalog-panel" onclick="switchTab('parceiros')">
+            <i data-lucide="users" aria-hidden="true" width="18" height="18"></i>
+            <span>Parceiros</span>
+            <span class="tab-count" id="count-parceiros">4</span>
+          </button>
+        </div>
+
+        <div class="toolbar-actions">
+          <span class="results-summary" id="results-summary" aria-live="polite">Exibindo 6 aplicativos</span>
+          <button type="button" class="reset-btn" id="btn-reset-counts" data-armed="false"
+            onclick="handleResetCounts(this)">
+            <i data-lucide="rotate-ccw" aria-hidden="true" width="14" height="14"></i>
+            <span>Resetar contadores</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="field-group">
+          <label class="field-label" for="search-input">Buscar projeto ou tecnologia</label>
+          <input type="search" id="search-input" class="input-well" placeholder="Ex.: Lotofácil, React, Python…"
+            oninput="handleSearchInput(this.value)">
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="category-select">Categoria</label>
+          <select id="category-select" class="select-well" onchange="handleCategoryChange(this.value)">
+            <option value="todas">Todas as categorias</option>
+            <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+            <option value="Aplicação Estatística">Aplicação Estatística</option>
+            <option value="Game Server">Game Server</option>
+            <option value="Mídia &amp; Áudio">Mídia &amp; Áudio</option>
+            <option value="Segurança">Segurança</option>
+            <option value="Produtividade">Produtividade</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="sort-select">Ordenar por</label>
+          <select id="sort-select" class="select-well" onchange="handleSortChange(this.value)">
+            <option value="nome">Nome (A–Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Partner Developer Directory Strip (shown on Parceiros tab) -->
+      <div class="partner-bar" id="partner-bar" hidden>
+        <div class="partner-bar-head">
+          <span class="data-label">Desenvolvedores parceiros — filtre os projetos ou abra o perfil completo</span>
+          <button type="button" class="copy-mini-btn" id="btn-clear-partner" onclick="filterByPartner('todos')" hidden>
+            Mostrar todos os parceiros
+          </button>
+        </div>
+        <div class="partner-pills" id="partner-pills"></div>
+      </div>
+
+      <!-- Partner Developer Directory Strip (shown on Parceiros tab) -->
+      <div class="partner-bar" id="partner-bar" hidden>
+        <div class="partner-bar-head">
+          <span class="data-label">Desenvolvedores parceiros — filtre os projetos ou abra o perfil completo</span>
+          <button type="button" class="copy-mini-btn" id="btn-clear-partner" onclick="filterByPartner('todos')" hidden>
+            Mostrar todos os parceiros
+          </button>
+        </div>
+        <div class="partner-pills" id="partner-pills"></div>
+      </div>
+    
+    </section>
+
+    <!-- Main Catalog Grid -->
+    <main id="catalog-panel" role="tabpanel" aria-labelledby="tab-meus-projetos">
+      <div class="card-grid" id="cards-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <h2 class="empty-title">Nenhum projeto encontrado</h2>
+        <p class="empty-desc">
+          Nenhum arquivo .exe corresponde aos filtros selecionados nesta aba. Limpe a busca ou troque a categoria para
+          visualizar o catálogo completo.
+        </p>
+        <button type="button" class="btn-primary" onclick="clearFilters()">Limpar filtros</button>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <span>Software Hub · Portfólio profissional de Osmair Pereira</span>
+      <span>Especificação baseada em arquitetura modular: vitrine hero, grid compacto e modais de software &amp;
+        perfil</span>
+    </footer>
+  </div>
+
+  <!-- Modal 1: Detalhes Completos do Software -->
+  <div class="modal-backdrop" id="app-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="app-modal-title"
+    onclick="handleBackdropClick(event)">
+    <div class="modal-dialog" id="app-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="app-icon-box" id="app-modal-icon"></div>
+          <div>
+            <h2 class="modal-title" id="app-modal-title">Nome do Software</h2>
+            <div class="modal-subtitle" id="app-modal-subtitle"></div>
+          </div>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Fechar detalhes do software"
+          onclick="closeModal()">
+          <i data-lucide="x" aria-hidden="true" width="20" height="20"></i>
+        </button>
+      </div>
+
+      <div class="spec-grid" id="app-modal-specs"></div>
+  </div>
+  <!-- Modal 2: Perfil do Desenvolvedor Parceiro -->
+  <div class="modal-backdrop" id="partner-modal-backdrop" role="dialog" aria-modal="true"
+    aria-labelledby="partner-modal-name" onclick="handleBackdropClick(event, 'partner')">
+    <div class="modal-dialog" id="partner-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="partner-avatar-lg" id="partner-modal-avatar">RM</div>
+          <div>
+            <h2 class="modal-title" id="partner-modal-name">Desenvolvedor Parceiro</h2>
+            <div class="modal-subtitle" id="partner-modal-meta"></div>
+          </div>
+        </div>
+        <button type="button" class="modal-close-btn" aria-label="Fechar perfil do desenvolvedor"
+          onclick="closeModal('partner')">
+          <i data-lucide="x" aria-hidden="true" width="20" height="20"></i>
+        </button>
+      </div>
+
+      <div class="spec-grid" id="partner-modal-metrics"></div>
+
+      <div class="modal-section">
+        <h3 class="modal-section-title">Biografia</h3>
+        <p id="partner-modal-bio" style="margin: 0;"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3 class="modal-section-title">Tecnologias Dominadas</h3>
+        <div class="stack-row" id="partner-modal-stacks"></div>
+      </div>
+
+      <div class="modal-section">
+        <h3 class="modal-section-title">Links &amp; Perfis (clique para copiar endereço)</h3>
+        <div class="links-grid" id="partner-modal-links"></div>
+      </div>
+
+      <div class="modal-section">
+        <h3 class="modal-section-title">Aplicativos (.exe) Publicados no Hub</h3>
+        <div class="partner-apps-list" id="partner-modal-apps"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Feedback Region -->
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
